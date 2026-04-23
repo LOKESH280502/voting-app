@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Voting App</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<h1>VOTING APP</h1>
+
+<div id="createPoll">
+  <h3>Create a Poll</h3>
+  <input id="question" placeholder="Enter question" />
+  <div id="options"></div>
+  <button onclick="addOption()">Add Option</button>
+  <button onclick="createPoll()">Create Poll</button>
+</div>
+
+<hr>
+<h2>Active Polls</h2>
+<div id="polls"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

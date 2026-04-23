@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap');
+
+/* ── RESET ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── BODY ── */
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: linear-gradient(160deg, #0d1b3e 0%, #0a3d4a 50%, #0e6b6b 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 48px 20px;
+  color: #fff;
+}
+
+/* ── TITLES ── */
+h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 3.2rem;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  font-weight: 400;
+}
+
+h1::after {
+  
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 4px;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  margin-top: 6px;
+  font-weight: 400;
+}
+
+h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.6rem;
+  color: rgba(255,255,255,0.88);
+  text-align: center;
+  margin: 28px 0 16px;
+  font-weight: 400;
+}
+
+h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.2rem;
+  color: #0d1b3e;
+  margin-bottom: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* ── HR ── */
+hr {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  margin: 32px auto;
+  max-width: 680px;
+}
+
+/* ── CARDS ── */
+#createPoll, .poll {
+  background: rgba(255,255,255,0.97);
+  border-radius: 18px;
+  padding: 24px 26px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22), 0 1px 0 rgba(255,255,255,0.1) inset;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #0d1b3e;
+}
+
+/* ── SECTION LABEL ── */
+#createPoll > h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #0a3d4a;
+  font-weight: 600;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#createPoll > h3::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 14px;
+  background: linear-gradient(180deg, #0e6b6b, #0a3d4a);
+  border-radius: 2px;
+}
+
+/* ── INPUT ── */
+input[type="text"],
+input:not([type]) {
+  width: 100%;
+  border: 1.5px solid #d0e8ed;
+  border-radius: 10px;
+  padding: 11px 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  background: #f4f9fb;
+  color: #0d1b3e;
+  outline: none;
+  margin: 0 0 10px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  border-color: #0e6b6b;
+  box-shadow: 0 0 0 3px rgba(14,107,107,0.12);
+  background: #fff;
+}
+
+input::placeholder {
+  color: #9bbfc9;
+  font-size: 0.85rem;
+}
+
+/* ── OPTION ROW ── */
+.option-input {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.option-input input {
+  flex: 1;
+  margin: 0;
+}
+
+.option-input button {
+  border: 1.5px solid #fca5a5;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #dc2626;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 10px 14px;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.option-input button:hover {
+  background: #dc2626;
+  color: #fff;
+  border-color: #dc2626;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ── BUTTONS ── */
+button {
+  border: 1.5px solid #d0e8ed;
+  border-radius: 10px;
+  background: #f4f9fb;
+  color: #0a3d4a;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 11px 20px;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  margin: 5px 5px 5px 0;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: #0a3d4a;
+  color: #fff;
+  border-color: #0a3d4a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(10,61,74,0.2);
+}
+
+/* ── CREATE POLL BUTTON ── */
+button[onclick="createPoll()"] {
+  background: linear-gradient(135deg, #0a3d4a, #0e6b6b);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 14px rgba(14,107,107,0.35);
+}
+
+button[onclick="createPoll()"]:hover {
+  box-shadow: 0 6px 20px rgba(14,107,107,0.5);
+  transform: translateY(-2px);
+}
+
+/* ── VOTE BUTTONS ── */
+.vote-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 1.5px solid #d0e8ed;
+  border-radius: 10px;
+  background: #f4f9fb;
+  color: #0a3d4a;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 13px 16px;
+  margin: 0 0 8px;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.vote-btn::before {
+  content: '◈  ';
+  color: #0e6b6b;
+  font-size: 10px;
+}
+
+.vote-btn:hover {
+  background: linear-gradient(135deg, #0a3d4a, #0e6b6b);
+  color: #fff;
+  border-color: transparent;
+  transform: translateX(5px);
+  box-shadow: 0 4px 14px rgba(10,61,74,0.2);
+}
+
+.vote-btn:hover::before {
+  color: rgba(255,255,255,0.6);
+}
+
+/* ── DELETE BUTTON ── */
+.delete-btn {
+  background: #fef2f2;
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+  color: #fff;
+  border-color: #dc2626;
+}
+
+/* ── DISABLED ── */
+button:disabled {
+  background: #f0f4f5;
+  color: #9bbfc9;
+  border-color: #d0e8ed;
+  cursor: not-allowed;
+  opacity: 0.65;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ── RESULT ITEM ── */
+.result-item {
+  margin: 14px 0;
+}
+#polls [id^="results-"] {
+  display: block;
+  width: 100%;
+}
+
+.result-item {
+  display: block;
+  width: 100%;
+  margin: 14px 0;
+}
+
+.bar-container {
+  display: block;
+  width: 100%;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.option-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0d1b3e;
+}
+
+.vote-count {
+  font-size: 0.75rem;
+  color: #0e6b6b;
+  font-weight: 600;
+}
+
+/* ── PROGRESS BAR ── */
+.bar-container {
+  background: #e8f4f6;
+  border-radius: 20px;
+  height: 22px;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #0d1b3e, #0e6b6b);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  width: 0;
+  transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.15);
+  transform: skewX(-20deg);
+  animation: shimmer 2.8s infinite;
+}
+
+@keyframes shimmer {
+  0%   { left: -60%; }
+  100% { left: 130%; }
+}
+
+/* ── TOTAL ── */
+.total {
+  font-size: 0.72rem;
+  color: #5f8fa0;
+  text-align: right;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-top: 6px;
+  padding-top: 10px;
+  border-top: 1px solid #e8f4f6;
+}
+
+/* ── POLL ACTIONS ── */
+.poll > div:last-child {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #e8f4f6;
+}

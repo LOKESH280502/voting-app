@@ -91,6 +91,15 @@ Or use Live Server in VS Code.
 
 ---
 
+
+
+## 🌐 Using Deployed Version
+
+If you want to use the deployed backend instead of running locally, update the API URL in `frontend/app.js`:
+
+```js
+const API = "https://your-backend-url.onrender.com";
+
 ## 👨‍💻 Author
 
 * LOKESHWAR GASIKANTI

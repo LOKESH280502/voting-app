@@ -1,5 +1,5 @@
-// const API = "http://localhost:5000";
-const API = "https://voting-app-gmpk.onrender.com";
+const API = "http://localhost:5000";
+// const API = "https://voting-app-gmpk.onrender.com";
 
 function addOption() {
   const div = document.createElement("div");
